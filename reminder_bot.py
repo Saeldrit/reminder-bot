@@ -141,11 +141,14 @@ def send_to_telegram(text: str) -> dict:
     return resp.json()
 
 
-def format_message(reminder: dict) -> str:
+def format_message(reminder: dict, mention_list: str = "") -> str:
     """Формирует финальное сообщение с метаданными спринта."""
     sprint_num = reminder.get("sprint_number", "?")
     header = f"🔄 Спринт #{sprint_num} — {reminder['label']}\n\n"
-    return header + reminder["message"]
+    body = header + reminder["message"]
+    if mention_list:
+        body += f"\n\n{mention_list}"
+    return body
 
 
 # ── Main ──────────────────────────────────────────────────────
@@ -169,7 +172,8 @@ def main():
         log.info("Сегодня отправлять нечего.")
         return
 
-    message = format_message(reminder)
+    mention_list = config.get("mention_list", "")
+    message = format_message(reminder, mention_list)
 
     if DRY_RUN:
         print("\n===== СООБЩЕНИЕ =====")

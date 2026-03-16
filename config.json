@@ -1,32 +1,34 @@
 {
   "sprint": {
-    "start_date": "2026-03-16",
+    "start_date": "2026-03-11",
     "length_days": 21,
     "timezone_offset_hours": 3
   },
 
+  "mention_list": "@ivandr64_work @postmasterpozitron @Danis_Devamitra @pvter @Egor_Kotlov @Saeldrit @adreij_s @Katherine_Sergeevna @andykostryukov @katrin_mea",
+
   "reminders": [
     {
       "id": "reminder_1",
-      "day_offset": 4,
+      "day_offset": 2,
       "label": "Неделя 1, пятница",
       "message": "📌 Напоминание #1\n\nЗакрыть на 2 дня 1 задачу, которую в среду взяли в работу.\n\nДедлайн — конец пятницы."
     },
     {
       "id": "reminder_2",
-      "day_offset": 8,
+      "day_offset": 6,
       "label": "Неделя 2, вторник",
       "message": "📌 Напоминание #2\n\nВ работе должно быть 2 или 3 дня задач.\nПроверьте: готовность минимум 40%.\n\nЕсли отстаёте — сигнальте сейчас, не в пятницу."
     },
     {
       "id": "reminder_3",
-      "day_offset": 10,
+      "day_offset": 8,
       "label": "Неделя 2, четверг",
       "message": "📌 Напоминание #3\n\nЗакрыть задачи на 2 дня.\n\nДо конца спринта — меньше недели."
     },
     {
       "id": "reminder_4",
-      "day_offset": 15,
+      "day_offset": 13,
       "label": "Неделя 3, вторник",
       "message": "📌 Напоминание #4\n\nФинальный рывок — закрыть последнюю задачу спринта.\n\nВсё, что не закрыто сегодня, переедет в следующий спринт."
     }
