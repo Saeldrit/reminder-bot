@@ -1,0 +1,45 @@
+name: Sprint Reminder Bot
+
+on:
+  schedule:
+    # Каждый будний день в 08:00 UTC (11:00 МСК)
+    - cron: '0 8 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (не отправлять в Telegram)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+      fake_date:
+        description: 'Симуляция даты (YYYY-MM-DD), пусто = сегодня'
+        required: false
+        default: ''
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run reminder bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+          CONFIG_PATH: config.json
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+          FAKE_DATE: ${{ github.event.inputs.fake_date || '' }}
+        run: python reminder_bot.py
