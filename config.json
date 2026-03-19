@@ -5,7 +5,7 @@
     "timezone_offset_hours": 3
   },
 
-  "mention_list": "@ivandr64_work @postmasterpozitron @Danis_Devamitra @pvter @Egor_Kotlov @Saeldrit @adreij_s @Katherine_Sergeevna @andykostryukov @katrin_mea",
+  "mention_list": "@ivandr64_work @postmasterpozitron @pvter @Egor_Kotlov @Saeldrit @adreij_s @Katherine_Sergeevna @andykostryukov @katrin_mea",
 
   "reminders": [
     {
@@ -30,7 +30,7 @@
       "id": "reminder_3",
       "day_offset": 8,
       "label": "Неделя 2, четверг",
-      "message": "📌 Напоминание #3\n\nЗакрыть задачу, которую взяли в работу во вторник."
+      "message": "📌 Напоминание #3\n\nЗакрыть задачу, которую взяли в работу во вторник. Взять новую задачу."
     },
     {
       "id": "reminder_4",
